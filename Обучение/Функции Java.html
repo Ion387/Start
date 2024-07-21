@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<head></head>
+<body>
+<script>
+const result='';
+//Сохранение значений. При загрузке страницы загружает result
+result=JSON.parse(localStorage.getItem('local'));
+localStorage.setItem('local',JSON.stringify(result));
+localStorage.removeItem('local'); //удаление результата из хранилища
+
+//Примеры объектов
+const object = {
+unity: 100
+rating: {
+  like:0,
+  dislike:0}
+fun: function function1() {};}
+object.fun ();
+
+// Скрытый оператор If
+
+let weather = w || {sun:'good', moon:'fool'}; //если w = false то срабатывает второе условие
+
+// Деструктурирование переменных в объекте
+const object2 = {
+  message: 'Hellow!',
+  price: 79}
+  const {message, price}=object2;
+  // Заключение переменной внутрь объекта
+  const object3 ={
+   // message:message
+    message}
+
+  // DOM document.title  ит.д.
+  document.title = 'text';
+  document.body.innerHTML = 'Hellow';
+  document.querySelector('button').innerHTML='changed';
+  document.querySelector('.classA').innerHTML='changed';// <button class=classA> - селектор классов
+  const buttonElement=document.querySelector('.classA');
+  //Element - значит что переменная содержит элемент ХТМЛ
+
+  //ввод чисел в строку и ревкция строки на клавиатуру
+/*в HTML: <input onkeydown="
+  if (event.key==='Enter') {calculateShipping ()};
+  console.log(event)" placeholder="Cost of order" class="js-cost-input">*/
+  let calculatorElement = document.querySelector('.js-cost-input');
+let finalCost=Number(calculatorElement.value);
+// создание и удаление нового класса для CSS смены стиля
+subscribeElement.classList.add('is-subscribed');
+subscribeElement.classList.remove('is-subscribed');
+
+//Массивы
+const myArray= [10,20,30];
+myArray.push(100);
+console.log(myArray);
+console.log(myArray[1]);
+//splice удаляет 0 значение , если 2 то удалит еще 1 значение
+myArray.splice(0,1);
+
+//Циклы 
+let i=1;
+while (i<=5) {i++;};
+for(let a=1; a<=5; a++ ) {break;continue}; //брейк останавливает цикл континуе пропускает один цикл
+// forEach альтернатива циклу фор для массивов.
+[1,2,3].forEach(function(value){
+consolelog(value);
+});
+
+
+i%3===0 //делится ли число i на 3
+
+// Использование функции для получения массива
+function x2(x1){ //
+
+  const numsDouble=[];
+  for (let i=0; i<x1.length; i++)
+  const num=x1[i];
+  numsDouble.push(num*2);
+}x2([2,2,2]) //цифры внутри функции массива будут удвоены
+
+//приравнять массивы:
+const r1=x1.slice 
+
+//короткий путь деструктурирования
+const [firsValue, secondValue]=[1,2,3];
+
+
+
+//Интервал и Таймаут
+setInterval(function() {clearInterval(true)}, 3000);
+setTimeout (function() {}, 3000)
+
+
+</script>
+</body>
+</html>
+
+

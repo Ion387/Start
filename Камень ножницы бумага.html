@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Камень Ножницы Бумага</title>
+<style>
+body {
+  background-color: rgb(25, 25, 25);
+font-family: Arial;}
+
+.name-top {
+  color: white;
+  font-size: 20px; 
+}
+.move-pict {
+  height: 50px;
+}
+.button-style {
+background-color: transparent;
+border: 3px solid white;
+width: 100px;
+height: 100px;
+border-radius: 50px;
+margin-right: 10px;
+cursor: pointer;
+}
+.result-css {
+color: white;
+}
+.win-or-lose {
+font-size: 30px;
+}
+</style>
+</head>
+<body> 
+  <p class="name-top">Камень Ножницы Бумага</p>
+<button    onclick="
+  winOrLose('rock');"
+  class="button-style">
+<img src="Камень-emoji.png" class="move-pict">
+</button>
+
+<button onclick="
+  winOrLose('scissors');" class="button-style">
+ <img src="Ножницы-emoji.png" class="move-pict">
+</button>
+
+<button onclick="
+  winOrLose('paper');
+  "class="button-style">
+ <img src="Бумага-emoji.png" class="move-pict">
+</button>
+
+<p class="win-or-lose result-css">Lets Play The Game!</p>
+<p class="StringChoice result-css">
+Камень Ножницы Бумага разз...два..три!!!
+</p>
+<p class="final-result result-css"></p>
+
+<button onclick="
+  result.draw=0;
+  result.lose=0;
+  result.win=0;
+  localStorage.removeItem('local');
+  updateResultElement();
+  ">
+Обновить результаты
+</button>
+
+<button onclick="autoplay()">
+Автоигра
+</button>
+
+<script>
+let winOrLoseWr='';
+let userMoveWr='';
+let pcMoveWr='';
+let result=JSON.parse(localStorage.getItem('local')) || 
+{win:0,
+lose:0,
+draw:0};
+
+
+console.log(result);
+
+
+function updateResultElement() {
+  
+  document.querySelector('.win-or-lose').innerHTML=`${winOrLoseWr}`
+  document.querySelector('.StringChoice').innerHTML=`Ход игрока: <img class="move-pict" src="${userMoveWr}-emoji.png"> компьютер - <img class="move-pict" src="${pcMoveWr}-emoji.png">`
+document.querySelector('.final-result').innerHTML=`Итог: побед:${result.win} , поражений:${result.lose}, ничья:${result.draw}`
+
+};
+
+function winOrLose(userMove) {
+
+  const pcMove=Math.random();
+
+  if (userMove==='rock') {userMoveWr='Камень';
+    if (pcMove<1/3) {pcMoveWr='Камень'; winOrLoseWr='Ничья!';
+    }else if (pcMove>=1/3 && pcMove<=2/3) {pcMoveWr='Ножницы'; winOrLoseWr='Победа!';
+    }else {pcMoveWr='Бумага'; winOrLoseWr='Поражение=(' }; }
+
+ else if (userMove==='scissors') {userMoveWr='Ножницы';
+    if (pcMove<1/3) {pcMoveWr='Камень'; winOrLoseWr='Поражение =(';
+    }else if (pcMove>1/3 && pcMove<=2/3) {pcMoveWr='Ножницы'; winOrLoseWr='Ничья!';
+    }else {pcMoveWr='Бумага'; winOrLoseWr='Победа!' }; } 
+
+ else if (userMove==='paper') {userMoveWr='Бумага';
+    if (pcMove<1/3) {pcMoveWr='Камень'; winOrLoseWr='Победа!';
+    }else if (pcMove>1/3 && pcMove<=2/3) {pcMoveWr='Ножницы'; winOrLoseWr='Поражение =(';
+    }else {pcMoveWr='Бумага'; winOrLoseWr='Ничья!' }; };
+
+    if (winOrLoseWr==='Победа!') {result.win ++}
+    else if (winOrLoseWr==='Ничья!') {result.draw ++}
+    else {result.lose ++};
+    localStorage.setItem('local',JSON.stringify(result));
+console.log(userMoveWr);
+    updateResultElement();
+
+//alert (`Ход игрока: ${userMoveWr} \nХод компьютера: ${pcMoveWr} \nРезультат боя: ${winOrLoseWr}\nИтог: побед:${result.win} , поражений:${result.lose}, ничья:${result.draw}`);
+};
+
+
+function autoplay() {
+setInterval(function() {
+ const playermove= 
+}
+
+updateResultElement(), 1000);     
+};
+</script>
+</body>
+</html>

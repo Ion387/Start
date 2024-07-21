@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Гонки</title>
+ <style>
+
+ 
+</style>
+</head>
+<body> 
+
+  <img id="moving" style="position: absolute; opacity:1 ;left: 500px;bottom:100px"> 
+
+  <img style="position:fixed ;left:1500px;bottom:100px" src="wall.PNG"> 
+
+ 
+
+<script>
+let moving=document.getElementById("moving");
+moving.src="car.jpg";
+document.addEventListener('keydown', (event) =>
+{ switch (true) { 
+
+   case moving.style.left==='1150px':
+ moving.src="boom.png";
+   console.log(moving);
+   break;
+
+    case event.key==='ArrowUp': 
+    var toppx = parseInt(moving.style.bottom);
+    moving.style.bottom = toppx + 10 + 'px'; break; 
+
+    case event.key==='ArrowDown':
+    var toppx = parseInt(moving.style.bottom);
+    moving.style.bottom = toppx - 10 + 'px'; break; 
+
+    case (event.key==='ArrowLeft'): 
+    var leftpx = parseInt(moving.style.left);
+    moving.style.left = leftpx - 10 + 'px'; 
+    console.log(moving.style.left);break; 
+
+    case (event.key==='ArrowRight'): 
+    var leftpx = parseInt(moving.style.left);
+    moving.style.left = leftpx + 10 + 'px';
+    console.log(moving.style.left); break; 
+
+   case (event.key===' ' && moving.style.opacity==='0'):
+   console.log(moving.style.opacity);
+   moving.style.opacity='1';break; 
+
+  case (event.key===' ' && moving.style.opacity==='1'):
+      console.log(moving.style.opacity);
+   moving.style.opacity='0';break;
+
+   
+default: break;
+
+   
+  }});
+
+
+</script>
+</body>
+</html>

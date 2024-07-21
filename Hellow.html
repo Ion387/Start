@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>rock paper scissors</title>
+
+</head>
+<body> 
+<p>rock paper scissors</p>
+
+<button onclick="
+pickCompMove();
+let computerMove=pickCompMove();
+if (computerMove==='comp choice rock') {alert(`${computerMove}\ndraw`);}
+else if (computerMove==='comp choice paper') {alert(`${computerMove}\nlose`);}
+else {alert(`${computerMove}\nwin!`);}
+">Rock</button>
+
+<button onclick="
+pickCompMove();
+let computerMove=pickCompMove();
+if (computerMove==='comp choice rock') {alert(`${computerMove}\nwin`);}
+else if (computerMove==='comp choice paper') {alert(`${computerMove}\ndraw`);}
+else {alert(`${computerMove}\nlose`);}
+">Paper</button>
+
+<button onclick="
+pickCompMove();
+let computerMove=pickCompMove();
+if (computerMove==='comp choice rock') {alert(`${computerMove}\nlose`);}
+else if (computerMove==='comp choice paper') {alert(`${computerMove}'\nwin`);}
+else {alert(`${computerMove}\ndraw!`);}
+">Scissors</button>
+    
+<script>
+    function winOrLose(userMove) {
+        if (computerMove==='comp choice rock') {alert(`${computerMove}\ndraw`);}
+else if (computerMove==='comp choice paper') {alert(`${computerMove}\nlose`);}
+else {alert(`${computerMove}\nwin!`);}
+">Rock</button>
+
+<button onclick="
+pickCompMove();
+let computerMove=pickCompMove();
+if (computerMove==='comp choice rock') {alert(`${computerMove}\nwin`);}
+else if (computerMove==='comp choice paper') {alert(`${computerMove}\ndraw`);}
+else {alert(`${computerMove}\nlose`);}
+">Paper</button>
+
+<button onclick="
+pickCompMove();
+let computerMove=pickCompMove();
+if (computerMove==='comp choice rock') {alert(`${computerMove}\nlose`);}
+else if (computerMove==='comp choice paper') {alert(`${computerMove}'\nwin`);}
+else {alert(`${computerMove}\ndraw!`);}
+
+
+    }
+
+
+        function pickCompMove(){
+            let computerMove='';
+const pcChoice=Math.random();
+if (pcChoice<1/3) {computerMove ='comp choice rock';}
+else if (pcChoice>=1/3 && pcChoice<2/3) {computerMove ='comp choice paper';}
+else {computerMove ='comp choice scissors';}
+return computerMove;
+
+        }
+
+ 
+</script>
+</body>
+</html>

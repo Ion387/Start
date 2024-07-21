@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>rock paper scissors</title>
+<style>
+.text-amazon {
+  font-size: 20px;
+}
+.calculate-button {
+padding: 12px 20px ;
+background-color: rgb(64, 64, 175);
+cursor:zoom-out;
+  }
+
+.
+</style>
+</head>
+<body> 
+  
+  <p class="text-amazon">Amazon Shipping Calculator</p>
+
+  <input onkeydown="
+  if (event.key==='Enter') {calculateShipping ()};console.log(event)" 
+  placeholder="Cost of order" class="js-cost-input">
+
+  <button onclick="calculateShipping();" class="calculate-button"> calculate</button>
+<p class="js-final-cost">cost of shipping</p>
+
+<script>
+
+function calculateShipping () {
+  let calculatorElement = document.querySelector('.js-cost-input');
+  console.log(calculatorElement);
+let finalCost=Number(calculatorElement.value);
+  if (finalCost<=40) {finalCost += 15}
+document.querySelector(".js-final-cost").innerText=`Final cost of your purchase - ${finalCost}`;}
+
+//`Final cost of your purchase - ${finalCost}`;
+
+  //document.querySelector('js-final-cost').innerHTML="jg";}
+  //;}
+
+
+
+</script>
+</body>
+</html>

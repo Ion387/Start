@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DOMS</title>
+
+</head>
+<style>
+body {
+font-family: arial;
+font-weight: bold;}
+.you-tube-CSS {
+border: none;
+background-color: black;
+color: white;
+padding-top: 10px;
+padding-bottom: 10px;
+padding-left: 15px;
+padding-right: 15px;
+font-weight: bold;
+border-radius: 50px;
+cursor: pointer;
+margin-bottom: 40px;}
+
+.is-subscribed {
+background-color: rgb(240, 240, 240);
+color: black;}
+.text-bottom {
+margin-bottom: 40px;
+}
+
+
+</style>
+<body> 
+<p class="text-bottom" >YouTube Subscribe 
+  Button</p>
+<button class="you-tube you-tube-CSS" onclick=" 
+subscribe()">
+Subscribe  
+</button>
+<script>
+function subscribe() {
+const subscribeElement=document.querySelector('.you-tube');
+if (subscribeElement.innerText==='Subscribe') {subscribeElement.innerText='Subscribed'; subscribeElement.classList.add('is-subscribed')}
+else {subscribeElement.innerText='Subscribe'; subscribeElement.classList.remove('is-subscribed');
+}}
+</script>
+</body>
+</html>
